@@ -26,19 +26,19 @@
 //
 // public static String encode(byte[] binaryData) {
 //        char[] result = new char[((binaryData.length + 2) / 3) * 4];
-//        //iæ¯æ¬¡åç§»ä¸‰å­—èŠ‚ï¼Œ
+//        //iÃ¿´ÎÆ«ÒÆÈı×Ö½Ú£¬
 //        for (int i = 0, index = 0; i < binaryData.length; i += 3, index += 4) {
 //            boolean quad = false;
 //            boolean trip = false;
-//            int val = (0xFF & (int) binaryData[i]);//å–å¾—ç¬¬ä¸€ä½ï¼Œç„¶åå‘å·¦åç§»8ä½
+//            int val = (0xFF & (int) binaryData[i]);//È¡µÃµÚÒ»Î»£¬È»ºóÏò×óÆ«ÒÆ8Î»
 //            val <<= 8;
-//            //ç¬¬äºŒä½éœ€è¦åˆ¤æ–­ï¼Œåˆ™ä»¤tripä¸ºtrue
+//            //µÚ¶şÎ»ĞèÒªÅĞ¶Ï£¬ÔòÁîtripÎªtrue
 //            if ((i + 1) < binaryData.length) {
 //                val |= (0xFF & (int) binaryData[i + 1]);
 //                trip = true;
 //            }
 //            val <<= 8;
-//            //ç¬¬ä¸‰ä½éœ€è¦åˆ¤æ–­ï¼Œåˆ™ä»¤quadä¸ºtrue
+//            //µÚÈıÎ»ĞèÒªÅĞ¶Ï£¬ÔòÁîquadÎªtrue
 //            if ((i + 2) < binaryData.length) {
 //                val |= (0xFF & (int) binaryData[i + 2]);
 //                quad = true;
@@ -64,12 +64,12 @@
 //
 // public static byte[] decode(String s) {
 //        char[] data = s.toCharArray();
-//        //è®¡ç®—åŸå§‹æ•°æ®å­—èŠ‚é•¿åº¦
+//        //¼ÆËãÔ­Ê¼Êı¾İ×Ö½Ú³¤¶È
 //        int length = ((data.length + 3) / 4) * 3;
 //        if (data.length > 0 && data[data.length - 1] == '=') {
 //            length--;
 //        }
-////        data.length > 0 data.length > 1 é˜²æ­¢æ•°ç»„è®¿é—®è¶Šç•Œï¼Œå¾ˆé‡è¦
+////        data.length > 0 data.length > 1 ·ÀÖ¹Êı×é·ÃÎÊÔ½½ç£¬ºÜÖØÒª
 //        if (data.length > 1 && data[data.length - 2] == '=') {
 //            length--;
 //        }
@@ -90,7 +90,7 @@
 //            }
 //        }
 //        if (index != result.length)
-//            throw new Error("è§£ç é”™è¯¯");
+//            throw new Error("½âÂë´íÎó");
 //        return result;
 //
 // }
