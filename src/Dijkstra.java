@@ -1,23 +1,38 @@
+import ZPutil.Catalan;
+
 import java.lang.reflect.Array;
+import java.util.ArrayDeque;
+import java.util.Stack;
 
 public class Dijkstra {
     private static char[] EN = "ABCDEF".toCharArray();
 
     public static void main(String[] args) {
 
-        //ÁÚ½Ó¾ØÕó
-        int MAX = 10000;
-        int[][] weight = {
-                {0,2,5,1, MAX, MAX},
-                {2,0,3,2, MAX, MAX},
-                {5,3,0,3,1,5},
-                {1,2,3,0,1, MAX},
-                {MAX, MAX,1,1,0,2},
-                {MAX, MAX,5, MAX,2,0}
-        };
+        Stack<Integer> integerStack = new Stack<>();
+        ArrayDeque<Integer> integerArrayDeque = new ArrayDeque<>();
+        ArrayDeque<Integer> outtegerArrayDeque = new ArrayDeque<>();
+        for (int i = 1; i <=  7; i++) {
+            integerArrayDeque.push(i);
 
-        int start=0;
-        Dijsktra(weight,start);
+        }
+//        Catalan.CTLOutStack(integerArrayDeque, outtegerArrayDeque, integerStack, 7);
+        Catalan.CTLOutStack(integerArrayDeque, outtegerArrayDeque, integerStack, 7, 4);
+
+//
+//        //ÁÚ½Ó¾ØÕó
+//        int MAX = 10000;
+//        int[][] weight = {
+//                {0,2,5,1, MAX, MAX},
+//                {2,0,3,2, MAX, MAX},
+//                {5,3,0,3,1,5},
+//                {1,2,3,0,1, MAX},
+//                {MAX, MAX,1,1,0,2},
+//                {MAX, MAX,5, MAX,2,0}
+//        };
+//
+//        int start=0;
+//        Dijsktra(weight,start);
     }
 
     private static void Dijsktra(int[][] weight, int start){
